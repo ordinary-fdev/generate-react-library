@@ -1,0 +1,39 @@
+{
+  "name": "react-lib-template",
+  "version": "1.0.0",
+  "description": "CLI tool to generate a React TypeScript library",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "bin": {
+    "create-react-library": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^18.3.4",
+    "@vitejs/plugin-react": "^4.3.1",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^10.1.8",
+    "react": "^18.3.1",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-sass": "^1.13.2",
+    "rollup-plugin-url": "^3.0.1",
+    "vite": "^5.4.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.5.0",
+    "@types/rollup": "^0.54.0",
+    "rollup": "^4.21.1",
+    "typescript": "^5.5.4"
+  }
+}

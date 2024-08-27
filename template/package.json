@@ -1,0 +1,76 @@
+{
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "build": "rollup -c --bundleConfigAsCjs"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ordinary-fdev/react-lib-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ordinary-fdev/react-lib-template/issues"
+  },
+  "homepage": "https://github.com/ordinary-fdev/react-lib-template#readme",
+  "name": "my-react-ts-lib",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.7.0",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/addon-links": "^8.2.9",
+    "@storybook/addon-onboarding": "^8.2.9",
+    "@storybook/blocks": "^8.2.9",
+    "@storybook/react": "^8.2.9",
+    "@storybook/react-vite": "^8.2.9",
+    "@storybook/test": "^8.2.9",
+    "@types/react-input-mask": "^3.0.5",
+    "eslint": "~8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "react": "^18.3.1",
+    "rollup": "^4.21.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-scss": "^4.0.0",
+    "sass": "^1.77.8",
+    "sass-embedded": "^1.77.8",
+    "storybook": "^8.2.9",
+    "ts-lib": "^0.0.5",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@fullstory/browser": "^2.0.5",
+    "@microsoft/applicationinsights-web": "^3.3.1",
+    "@types/react": "^18.3.4",
+    "classnames": "^2.5.1",
+    "inversify": "^6.0.2",
+    "react-hook-form": "^7.51.3",
+    "react-input-mask": "^2.0.4",
+    "react-router-dom": "^6.26.1",
+    "rxjs": "^7.8.1",
+    "tslib": "^2.6.3"
+  }
+}
