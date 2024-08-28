@@ -1,12 +1,11 @@
 import dts from "rollup-plugin-dts";
-import sass from "rollup-plugin-sass";
-import url from "rollup-plugin-url";
 import typescript from "rollup/plugin-typescript";
 
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import scss from "rollup-plugin-scss";
+import postcss from "rollup-plugin-postcss";
 import pkg from "./package.json" assert { type: "json" };
+import { copy } from "fs-extra";
 
 export default [
   {
@@ -18,12 +17,24 @@ export default [
         sourcemap: true,
         inlineDynamicImports: true,
       },
+      //uncomment this to get cjs build too 
+      // {
+      //   file: pkg.main,
+      //   format: "cjs",
+      //   sourcemap: true,
+      //   inlineDynamicImports: true,
+      // },
     ],
     plugins: [
       resolve(),
       commonjs(),
-      scss({ output: "dist/styles.scss" }),
+      postcss({ extract: "dist/styles.scss" }),
       typescript({ tsconfig: "./tsconfig.json" }),
+      copy({
+        targets:[
+          {src:'src/assets/images/**/**', dest: "dist/images"}
+        ]
+      })
     ],
     external: ["react", "react-dom"],
   },

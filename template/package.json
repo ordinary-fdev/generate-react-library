@@ -1,4 +1,8 @@
 {
+  "name": "my-react-ts-lib",
+  "version": "1.0.0",
+  "description":"",
+  "author": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -16,14 +20,13 @@
     "type": "git",
     "url": "git+https://github.com/ordinary-fdev/react-lib-template.git"
   },
-  "author": "",
+ 
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ordinary-fdev/react-lib-template/issues"
   },
   "homepage": "https://github.com/ordinary-fdev/react-lib-template#readme",
-  "name": "my-react-ts-lib",
-  "version": "1.0.0",
+ 
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
@@ -59,7 +62,8 @@
     "sass-embedded": "^1.77.8",
     "storybook": "^8.2.9",
     "ts-lib": "^0.0.5",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "rollup-plugin-postcss":"^4.0.2"
   },
   "dependencies": {
     "@fullstory/browser": "^2.0.5",
