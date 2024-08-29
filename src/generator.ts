@@ -126,7 +126,7 @@ const TEMPLATE_FILES = [
 
 const TEMPLATE_DIR = path.resolve(__dirname, '../template');
 
-export function generateLibrary(name: string, options: { description: string; author: string; license: string }) {
+export function generateLibrary(name: string, options: { description: string; author: string; license: string}) {
   const projectDir = path.join(process.cwd(), name);
 
   if (fs.existsSync(projectDir)) {
@@ -145,6 +145,7 @@ export function generateLibrary(name: string, options: { description: string; au
   packageJson.description = options.description;
   packageJson.author = options.author;
   packageJson.license = options.license;
+ 
   fs.writeJsonSync(packageJsonPath, packageJson, { spaces: 2 });
 
   console.log(`Library ${name} created successfully!`);

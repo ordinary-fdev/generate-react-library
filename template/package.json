@@ -1,6 +1,10 @@
 {
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "name": "my-react-ts-lib",
+  "version": "1.0.0",
+  "description":"",
+  "author": "",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [
     "dist"
   ],
@@ -9,21 +13,20 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "rollup -c --bundleConfigAsCjs"
+    "build": "rollup -c"
   },
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ordinary-fdev/react-lib-template.git"
+    "url": "git+https://github.com/ordinary-fdev/generate-react-library.git"
   },
-  "author": "",
+ 
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ordinary-fdev/react-lib-template/issues"
+    "url": "https://github.com/ordinary-fdev/generate-react-library/issues"
   },
-  "homepage": "https://github.com/ordinary-fdev/react-lib-template#readme",
-  "name": "my-react-ts-lib",
-  "version": "1.0.0",
+  "homepage": "https://github.com/ordinary-fdev/generate-react-library#readme",
+ 
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
@@ -59,7 +62,9 @@
     "sass-embedded": "^1.77.8",
     "storybook": "^8.2.9",
     "ts-lib": "^0.0.5",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "rollup-plugin-postcss":"^4.0.2",
+    "rollup-plugin-copy":"^3.5.0"
   },
   "dependencies": {
     "@fullstory/browser": "^2.0.5",

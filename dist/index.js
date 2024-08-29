@@ -12,10 +12,10 @@ program
     .version('1.0.0')
     .description('CLI tool to generate a React TypeScript library');
 program
-    .command('create <name>')
-    .description('Create a new React TypeScript library')
+    .command('name <name>')
+    .description('Generate a new React TypeScript library')
     .action(async (name) => {
-    console.log(chalk.blue(`Starting creation of library: ${name}`));
+    console.log(chalk.blue(`Starting Generation of library: ${name}`));
     try {
         const { generateLibrary } = await import('./generator.js');
         console.log(chalk.blue('Prompting for additional information...'));
