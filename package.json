@@ -1,12 +1,12 @@
 {
-  "name": "generate-react-library",
+  "name": "generate-react-lib",
   "version": "0.0.1",
   "description": "CLI tool to generate a React TypeScript library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "bin": {
-    "generate-react-library": "./dist/index.js"
+    "generate-react-lib": "./dist/index.js"
   },
   "scripts": {
     "build": "tsc",

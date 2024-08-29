@@ -1,11 +1,27 @@
 import dts from "rollup-plugin-dts";
-import typescript from "rollup/plugin-typescript";
-
+import typescript from "@rollup/plugin-typescript";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import postcss from "rollup-plugin-postcss";
+import copy from "rollup-plugin-copy";
+
+
 import pkg from "./package.json" assert { type: "json" };
-import { copy } from "fs-extra";
+
+function removeScssImports(){
+  return {
+    name:'',
+    transform(code,id){
+      if(id.endsWith('.d.ts')){
+        return{
+          code: code.replace(/import\s+['"]\.\/.*\.scss['"'];/g,''),
+          map:null
+        }
+      };
+      return null;
+    }
+  };
+}
 
 export default [
   {
@@ -28,19 +44,19 @@ export default [
     plugins: [
       resolve(),
       commonjs(),
-      postcss({ extract: "dist/styles.scss" }),
+      postcss({ extract: "styles.scss", minimize:true}),
       typescript({ tsconfig: "./tsconfig.json" }),
       copy({
         targets:[
-          {src:'src/assets/images/**/**', dest: "dist/images"}
+          { src: 'src/assets', dest: 'dist' }
         ]
       })
     ],
     external: ["react", "react-dom"],
   },
   {
-    input: "dist/esm/types/index.d.ts",
+    input: "dist/types/index.d.ts",
     output: { file: "dist/index.d.ts", format: "es" },
-    plugins: [dts()],
+    plugins: [removeScssImports(),dts()],
   },
 ];
